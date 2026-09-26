@@ -29,10 +29,17 @@ webpackChunkdiscord_app.push([[Symbol()], {}, f => {
 }]);
 ```
 Discord functions on a bunch of modules that all serve different purposes. For what we're trying to do, we need to access two modules: the module that stores information on channels, and the module that handles retrieving messages.
+
 The way we go about obtaining these modules is a bit finicky. Firstly, we push an element onto `webpackChunkdiscord_app`. The push method that's called here is Discord's own implementation which takes an array with three elements, the third of which is a function. Inside this function, we iterate through each module and check to see if the IDs match those of the modules we're looking for.
+
 We first check to see if we've found the module that handles retrieving messages (id 174459). When we find it, we call the `extendSuperProperties` method, and pass it `e` (the module itself). Whenever Discord wants to make a `GET` request, it contains a header called `X-Super-Properties`; this is how Discord determines if it should ask you for age verification or not. One flaw of this header however, is that Discord always encodes it in base 64. By passing `e` to the `extendSuperProperties` method, it makes it impossible for Discord to encode it in base 64, so it doesn't set the header. This now lets us receive `GET` responses from NSFW channels.
+
 Now that we can read the channels with the `GET` requests, it would be nice to see them in Discord.
+
 Upon finding the module that stores information on channels (id 734057), we call its `loadAllGuildAndPrivateChannelsFromDisk` method. This returns a list of every channel ID stored locally by Discord, which we iterate through and make it so Discord doesn't think any of them are NSFW. Now, Discord doesn't give us the age verification screen and we can use the channel normally.
+
 The part of this that could prove to be problematic is how it checks for the module id. I'm not sure if these are random every time Discord updates, but if they ever end up changing, this won't work anymore. I'm also not 100% sure if clobbering the `X-Super-Properties` header breaks anything else, but I haven't seen anything wrong so far.
+
+
 
 I started working on this as soon as I saw the update. It took about 3 hours, but I found it fun overall; about as fun as cracking Adobe products. I rate it an 8/10 on the fun scale.

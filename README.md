@@ -1,6 +1,6 @@
 # Discord Age Verification Bypass
 ## Step 1:
-You need to enable the setting that allows you to open the inspect element inside the Discord app. To do this, close Discord and navigate to %appdata%/discord/settings.json on windows, or ~/.config/discord/settings.json on linux, and add the following line:
+You need to enable the setting that allows you to open the inspect element inside the Discord app. To do this, close Discord and navigate to `%appdata%/discord/settings.json` on Windows, or `~/.config/discord/settings.json` on Linux, and add the following line:
 ```json
 "DANGEROUS_ENABLE_DEVTOOLS_ONLY_ENABLE_IF_YOU_KNOW_WHAT_YOURE_DOING": true
 ```

@@ -2,7 +2,8 @@
 
 # IMPORTANT UPDATE!
 Fixed a bug where attempting to join a NSFW server with the code active would result in the account being temporarily limited. Though this has been fixed, you will still need to paste the code again upon joining the server to access the channels. **DO NOT USE THE OLD CODE IF YOU STILL HAVE IT!!**
--# Thanks to `ijnrghjkdsmigywneig203` for making me aware of this! If you find any other bugs or have a suggestion, please let me know by posting an issue.
+
+*Thanks to `ijnrghjkdsmigywneig203` for making me aware of this! If you find any other bugs or have a suggestion, please let me know by posting an issue.*
 
 ## Step 1:
 You need to enable the setting that allows you to open the inspect element inside the Discord app. To do this, close Discord and navigate to `%appdata%/discord/settings.json` on Windows, or `~/.config/discord/settings.json` on Linux, and add the following line:

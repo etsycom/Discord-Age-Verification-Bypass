@@ -42,7 +42,7 @@ Now that we can read the channels with the `GET` requests, it would be nice to s
 Upon finding the module that stores information on channels (ID 734057), we call its `loadAllGuildAndPrivateChannelsFromDisk` method. This returns a list of every channel ID stored locally by Discord, which we iterate through and make it so Discord doesn't think any of them are NSFW. Now, Discord doesn't give us the age verification screen and we can use the channel normally.
 
 The part of this that could prove to be problematic is how it checks for the module ID. I'm not sure if these are random every time Discord updates, but if they ever end up changing, this won't work anymore. I'm also not 100% sure if clobbering the `X-Super-Properties` header breaks anything else, but I haven't seen anything wrong so far.
-&nbsp;
-&nbsp;
-&nbsp;
+\
+\
+\
 I started working on this as soon as I saw the update. It took about 3 hours, but I found it fun overall; about as fun as cracking Adobe products. I rate it an 8/10 on the fun scale.

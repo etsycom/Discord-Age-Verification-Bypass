@@ -1,7 +1,8 @@
+# Discord Age Verification Bypass
+
 # IMPORTANT NOTE!
 I have observed accounts being briefly limited upon attempting to join NSFW servers with this code active (the accounts get hit with a "spam" violation). However, at least from what I have seen through testing, chatting in channels marked as NSFW in servers that are NOT NSFW does not result in any limitations or bans. I will be looking for a fix for this; in the meantime, if anyone has any further information on this or a potential solution, please let me know (just post it as an issue or something).
 
-# Discord Age Verification Bypass
 ## Step 1:
 You need to enable the setting that allows you to open the inspect element inside the Discord app. To do this, close Discord and navigate to `%appdata%/discord/settings.json` on Windows, or `~/.config/discord/settings.json` on Linux, and add the following line:
 ```json
